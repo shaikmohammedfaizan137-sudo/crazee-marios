@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-crazee-red: #E31B23;
+  --color-crazee-green: #008A3F;
+  --color-crazee-yellow: #FCEB11;
+
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-display: 'Outfit', 'Inter', system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: var(--font-sans);
+    background-color: #fafaf9;
+    color: #1c1917;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.025em;
+  }
+}
+
+/* Custom utility classes for brand colors */
+@layer utilities {
+  .bg-crazee-red { background-color: #E31B23; }
+  .bg-crazee-green { background-color: #008A3F; }
+  .bg-crazee-yellow { background-color: #FCEB11; }
+  .text-crazee-red { color: #E31B23; }
+  .text-crazee-green { color: #008A3F; }
+  .text-crazee-yellow { color: #FCEB11; }
+  .border-crazee-red { border-color: #E31B23; }
+  .border-crazee-green { border-color: #008A3F; }
+  .border-crazee-yellow { border-color: #FCEB11; }
+  .ring-crazee-red { --tw-ring-color: #E31B23; }
+  .ring-crazee-green { --tw-ring-color: #008A3F; }
+  .hover\:bg-crazee-red:hover { background-color: #E31B23; }
+  .hover\:bg-crazee-green:hover { background-color: #008A3F; }
+  .hover\:text-crazee-red:hover { color: #E31B23; }
+  .hover\:text-crazee-green:hover { color: #008A3F; }
+  .hover\:border-crazee-green:hover { border-color: #008A3F; }
+  .focus\:border-crazee-green:focus { border-color: #008A3F; }
+  .focus\:ring-crazee-green:focus { --tw-ring-color: #008A3F; }
+  .focus\:ring-crazee-red:focus { --tw-ring-color: #E31B23; }
+  .shadow-green-900\/50 { box-shadow: 0 10px 15px -3px rgba(0,62,28,0.5); }
+}
