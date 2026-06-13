@@ -5,13 +5,13 @@ import { Link } from 'react-router-dom';
 
 // Gallery items 
 const galleryItems = [
-  { src: '/crazee-marios/imagess/WhatsApp Image 2026-05-24 at 12.15.34 PM (1).jpeg', label: 'BBQ Chicken Wings', span: 'md:col-span-2 md:row-span-2' },
-  { src: '/crazee-marios/imagess/WhatsApp Image 2026-05-24 at 12.15.22 PM.jpeg', label: 'Chicken Tikka Masala', span: '' },
-  { src: '/crazee-marios/imagess/WhatsApp Image 2026-05-24 at 12.15.34 PM.jpeg', label: 'Beef Seekh Kabob', span: '' },
-  { src: '/crazee-marios/imagess/WhatsApp Image 2026-05-24 at 12.15.36 PM.jpeg', label: 'Steak & Cheese Sub', span: '' },
-  { src: '/crazee-marios/imagess/WhatsApp Image 2026-05-24 at 12.15.53 PM.jpeg', label: 'Prawn Biryani', span: '' },
-  { src: '/crazee-marios/imagess/WhatsApp Image 2026-05-24 at 12.15.57 PM (1).jpeg', label: 'Palak Paneer', span: '' },
-  { src: '/crazee-marios/imagess/WhatsApp Image 2026-05-24 at 12.16.05 PM.jpeg', label: 'Chicken Tikka Pizza', span: 'md:col-span-2' },
+  { src: `${import.meta.env.BASE_URL}imagess/WhatsApp Image 2026-05-24 at 12.15.34 PM (1).jpeg`, label: 'BBQ Chicken Wings', span: 'md:col-span-2 md:row-span-2' },
+  { src: `${import.meta.env.BASE_URL}imagess/WhatsApp Image 2026-05-24 at 12.15.22 PM.jpeg`, label: 'Chicken Tikka Masala', span: '' },
+  { src: `${import.meta.env.BASE_URL}imagess/WhatsApp Image 2026-05-24 at 12.15.34 PM.jpeg`, label: 'Beef Seekh Kabob', span: '' },
+  { src: `${import.meta.env.BASE_URL}imagess/WhatsApp Image 2026-05-24 at 12.15.36 PM.jpeg`, label: 'Steak & Cheese Sub', span: '' },
+  { src: `${import.meta.env.BASE_URL}imagess/WhatsApp Image 2026-05-24 at 12.15.53 PM.jpeg`, label: 'Prawn Biryani', span: '' },
+  { src: `${import.meta.env.BASE_URL}imagess/WhatsApp Image 2026-05-24 at 12.15.57 PM (1).jpeg`, label: 'Palak Paneer', span: '' },
+  { src: `${import.meta.env.BASE_URL}imagess/WhatsApp Image 2026-05-24 at 12.16.05 PM.jpeg`, label: 'Chicken Tikka Pizza', span: 'md:col-span-2' },
 ];
 
 export default function Gallery() {

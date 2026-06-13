@@ -14,7 +14,7 @@ export default function Footer() {
       <div className="relative overflow-hidden bg-gradient-to-r from-crazee-red via-red-600 to-rose-600 py-14">
         {/* Background pattern */}
         <div className="absolute inset-0 opacity-10"
-          style={{ backgroundImage: `url('/crazee-marios/imagess/WhatsApp Image 2026-05-24 at 12.15.53 PM.jpeg')`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+          style={{ backgroundImage: `url('${import.meta.env.BASE_URL}imagess/WhatsApp Image 2026-05-24 at 12.15.53 PM.jpeg')`, backgroundSize: 'cover', backgroundPosition: 'center' }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-crazee-red/95 to-rose-600/90" />
         
@@ -54,7 +54,7 @@ export default function Footer() {
           <div className="mb-6">
             <div style={{ width: '160px', height: '54px', overflow: 'hidden', position: 'relative' }}>
               <img
-                src="/crazee-marios/imagess/transpirent logo"
+                src={`${import.meta.env.BASE_URL}imagess/transpirent logo`}
                 alt="CrazeeMarios Logo"
                 style={{
                   position: 'absolute',

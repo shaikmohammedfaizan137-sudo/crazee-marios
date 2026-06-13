@@ -26,7 +26,7 @@ export default function Hero() {
       <div className="absolute inset-0">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url('/imagess/resturant')` }}
+          style={{ backgroundImage: `url('${import.meta.env.BASE_URL}imagess/resturant')` }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-stone-950 via-stone-950/85 to-stone-950/40" />
         <div className="absolute inset-0 bg-gradient-to-t from-stone-950/60 via-transparent to-transparent" />

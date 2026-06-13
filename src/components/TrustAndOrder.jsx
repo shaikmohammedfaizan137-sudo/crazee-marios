@@ -111,11 +111,11 @@ function CommitmentSection() {
 // SECTION 2: Order Platforms
 // ─────────────────────────────────────────────────────────────
 const platforms = [
-  { name: 'Uber Eats', href: 'https://www.ubereats.com/', img: '/crazee-marios/imagess/uber eats.png' },
-  { name: 'Grubhub', href: 'https://www.grubhub.com/', img: '/crazee-marios/imagess/Grubhub.png' },
-  { name: 'BentoBox', href: 'https://www.bentobox.net/', img: '/crazee-marios/imagess/bentobox.jfif' },
-  { name: 'DoorDash', href: 'https://www.doordash.com/', img: '/crazee-marios/imagess/Doordash.png' },
-  { name: 'Slice', href: 'https://slicelife.com/', img: '/crazee-marios/imagess/Slice.png' },
+  { name: 'Uber Eats', href: 'https://www.ubereats.com/', img: `${import.meta.env.BASE_URL}imagess/uber eats.png` },
+  { name: 'Grubhub', href: 'https://www.grubhub.com/', img: `${import.meta.env.BASE_URL}imagess/Grubhub.png` },
+  { name: 'BentoBox', href: 'https://www.bentobox.net/', img: `${import.meta.env.BASE_URL}imagess/bentobox.jfif` },
+  { name: 'DoorDash', href: 'https://www.doordash.com/', img: `${import.meta.env.BASE_URL}imagess/Doordash.png` },
+  { name: 'Slice', href: 'https://slicelife.com/', img: `${import.meta.env.BASE_URL}imagess/Slice.png` },
 ];
 
 function OrderPlatformsSection() {
@@ -253,7 +253,7 @@ function DualCtaSection() {
           >
             <div
               className="absolute inset-0 bg-cover bg-center scale-100 group-hover:scale-105 transition-transform duration-700"
-              style={{ backgroundImage: `url('/crazee-marios/imagess/WhatsApp Image 2026-05-24 at 12.15.34 PM.jpeg')` }}
+              style={{ backgroundImage: `url('${import.meta.env.BASE_URL}imagess/WhatsApp Image 2026-05-24 at 12.15.34 PM.jpeg')` }}
             />
             <div className="absolute inset-0 bg-gradient-to-r from-stone-950/95 via-stone-950/80 to-stone-950/20" />
 
@@ -283,7 +283,7 @@ function DualCtaSection() {
           >
             <div
               className="absolute inset-0 bg-cover bg-center scale-100 group-hover:scale-105 transition-transform duration-700"
-              style={{ backgroundImage: `url('/crazee-marios/imagess/WhatsApp Image 2026-05-24 at 12.15.53 PM.jpeg')` }}
+              style={{ backgroundImage: `url('${import.meta.env.BASE_URL}imagess/WhatsApp Image 2026-05-24 at 12.15.53 PM.jpeg')` }}
             />
             <div className="absolute inset-0 bg-gradient-to-r from-stone-950/95 via-stone-950/80 to-stone-950/20" />
 

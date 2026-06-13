@@ -81,7 +81,7 @@ export default function AboutPage() {
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-luminosity"
-          style={{ backgroundImage: `url('/crazee-marios/imagess/WhatsApp Image 2026-05-24 at 12.15.34 PM.jpeg')` }}
+          style={{ backgroundImage: `url('${import.meta.env.BASE_URL}imagess/WhatsApp Image 2026-05-24 at 12.15.34 PM.jpeg')` }}
         />
         
         {/* Strong Dark Overlay for maximum text contrast */}
@@ -154,7 +154,7 @@ export default function AboutPage() {
             <motion.div {...fadeUp(0.2)} className="relative">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src="/crazee-marios/imagess/chef"
+                  src={`${import.meta.env.BASE_URL}imagess/chef`}
                   alt="Chef at Crazee Mario's"
                   className="w-full h-[520px] object-cover"
                 />
@@ -206,7 +206,7 @@ export default function AboutPage() {
             {/* Background Image Blend */}
             <div
               className="absolute inset-0 bg-cover bg-center opacity-20 mix-blend-overlay"
-              style={{ backgroundImage: `url('/crazee-marios/imagess/WhatsApp Image 2026-05-24 at 12.15.53 PM.jpeg')` }}
+              style={{ backgroundImage: `url('${import.meta.env.BASE_URL}imagess/WhatsApp Image 2026-05-24 at 12.15.53 PM.jpeg')` }}
             />
             
             <div className="relative px-8 py-16 md:px-16 md:py-20 text-center flex flex-col items-center">
