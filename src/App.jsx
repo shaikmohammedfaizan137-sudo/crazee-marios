@@ -11,7 +11,7 @@ import ContactPage from './pages/ContactPage';
 function App() {
   return (
     <CartProvider>
-      <Router basename="/crazee-marios/">
+      <Router basename={import.meta.env.BASE_URL}>
         <div className="flex flex-col min-h-screen bg-stone-50 font-sans text-stone-900">
           <Navbar />
           <main className="flex-grow">
