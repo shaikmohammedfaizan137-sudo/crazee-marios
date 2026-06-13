@@ -92,12 +92,12 @@ export default function Hero() {
           {/* Stats */}
           <motion.div
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.45 }}
-            className="grid grid-cols-4 gap-4 border-t border-white/10 pt-8"
+            className="flex flex-wrap items-center gap-6 sm:gap-8 border-t border-white/10 pt-8"
           >
             {stats.map((s) => (
-              <div key={s.label} className="text-center">
-                <div className="text-white font-sans font-black text-2xl">{s.value}</div>
-                <div className="text-stone-400 text-xs mt-1">{s.label}</div>
+              <div key={s.label} className="flex items-baseline gap-2">
+                <div className="text-white font-sans font-black text-2xl sm:text-3xl">{s.value}</div>
+                <div className="text-stone-300 font-medium text-sm tracking-wide uppercase">{s.label}</div>
               </div>
             ))}
           </motion.div>
