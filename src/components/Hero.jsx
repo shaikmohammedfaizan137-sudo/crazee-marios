@@ -55,7 +55,7 @@ export default function Hero() {
 
           <motion.h1
             initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-5xl sm:text-6xl lg:text-7xl font-display font-black text-white leading-[1.05] mb-6"
+            className="text-5xl sm:text-6xl lg:text-7xl font-sans font-black text-white leading-[1.05] mb-6"
           >
             Bold Flavors.<br />
             <span className="text-crazee-yellow">Fresh Food.</span><br />
@@ -96,7 +96,7 @@ export default function Hero() {
           >
             {stats.map((s) => (
               <div key={s.label} className="text-center">
-                <div className="text-white font-display font-black text-2xl">{s.value}</div>
+                <div className="text-white font-sans font-black text-2xl">{s.value}</div>
                 <div className="text-stone-400 text-xs mt-1">{s.label}</div>
               </div>
             ))}
@@ -120,7 +120,7 @@ export default function Hero() {
                   <Utensils size={24} />
                 </div>
                 <div>
-                  <div className="font-display font-bold text-stone-900 text-lg">{card.label}</div>
+                  <div className="font-sans font-bold text-stone-900 text-lg">{card.label}</div>
                   <div className="text-stone-400 text-sm">{card.sub}</div>
                   <div className="flex gap-0.5 mt-1">
                     {[...Array(5)].map((_, si) => (

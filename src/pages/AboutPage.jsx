@@ -13,7 +13,7 @@ const fadeUp = (delay = 0) => ({
 const features = [
   { icon: ChefHat,     title: 'Expert Chefs',     desc: 'Masters of authentic South Asian spices and global comfort food.', bg: 'bg-amber-50',  color: 'text-amber-600' },
   { icon: ShieldCheck, title: '100% Halal',        desc: 'Strictly sourced premium certified halal ingredients only.',        bg: 'bg-green-50',  color: 'text-crazee-green' },
-  { icon: Leaf,        title: 'Fresh Daily',       desc: 'Everything prepared fresh every day — never pre-cooked.',           bg: 'bg-lime-50',   color: 'text-lime-600' },
+  { icon: Leaf,        title: 'Fresh Daily',       desc: 'Everything prepared fresh every day - never pre-cooked.',           bg: 'bg-lime-50',   color: 'text-lime-600' },
   { icon: Clock,       title: 'Fast Service',      desc: 'Hot, flavorful food served quickly without compromising quality.',  bg: 'bg-blue-50',   color: 'text-blue-600' },
   { icon: Heart,       title: 'Family Friendly',   desc: 'A warm, welcoming atmosphere for the whole family.',               bg: 'bg-rose-50',   color: 'text-rose-600' },
   { icon: Star,        title: 'Top Rated',         desc: 'Loved by our community with hundreds of 5-star reviews.',          bg: 'bg-yellow-50', color: 'text-yellow-600' },
@@ -57,7 +57,7 @@ const timeline = [
   {
     year: '2024',
     title: '18 Years Strong',
-    desc: "With over 18 years of experience, 50+ menu items, and thousands of happy customers, Crazee Mario's stands as a beloved institution in Lake Worth — still serving bold flavors with the same passion that started it all.",
+    desc: "With over 18 years of experience, 50+ menu items, and thousands of happy customers, Crazee Mario's stands as a beloved institution in Lake Worth - still serving bold flavors with the same passion that started it all.",
     gradient: 'from-purple-500 to-pink-500',
   },
   {
@@ -77,29 +77,39 @@ export default function AboutPage() {
       {/* ═══════════════════════════════════════════════════════════════
           Hero Banner
       ═══════════════════════════════════════════════════════════════ */}
-      <section className="relative bg-stone-900 text-white py-28 overflow-hidden">
+      <section className="relative bg-stone-950 text-white pt-48 pb-32 overflow-hidden">
+        {/* Background Image */}
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-20"
-          style={{ backgroundImage: `url('/imagess/WhatsApp Image 2026-05-24 at 12.15.34 PM.jpeg')` }}
+          className="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-luminosity"
+          style={{ backgroundImage: `url('/crazee-marios/imagess/WhatsApp Image 2026-05-24 at 12.15.34 PM.jpeg')` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-stone-950/80 to-crazee-green/20" />
+        
+        {/* Strong Dark Overlay for maximum text contrast */}
+        <div className="absolute inset-0 bg-stone-950/50" />
+        <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/90 to-transparent" />
+
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <motion.p
+          <motion.div
             initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}
-            className="text-crazee-yellow font-bold uppercase tracking-widest text-sm mb-4"
+            className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-stone-800/80 border border-stone-700 backdrop-blur-md mb-8 shadow-xl"
           >
-            Our Story
-          </motion.p>
+            <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
+            <span className="text-stone-200 font-bold uppercase tracking-widest text-xs">Our Story</span>
+          </motion.div>
+          
           <motion.h1
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
-            className="text-5xl md:text-6xl font-display font-black mb-6 leading-tight"
+            className="text-5xl md:text-7xl font-display font-black mb-6 leading-tight drop-shadow-2xl"
           >
             More Than a Restaurant.<br />
-            <span className="text-crazee-green">It's an Experience.</span>
+            <span className="text-amber-400 drop-shadow-[0_0_15px_rgba(251,191,36,0.3)]">
+              It's an Experience.
+            </span>
           </motion.h1>
+          
           <motion.p
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
-            className="text-xl text-stone-300 leading-relaxed"
+            className="text-xl md:text-2xl text-stone-300 leading-relaxed max-w-2xl mx-auto drop-shadow-md"
           >
             Bringing the boldest flavors and freshest ingredients to Lake Worth, Florida.
           </motion.p>
@@ -107,7 +117,7 @@ export default function AboutPage() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════
-          Passionate About Fastfood — Chef Image + Text
+          Passionate About Fastfood - Chef Image + Text
       ═══════════════════════════════════════════════════════════════ */}
       <section className="py-24 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -116,9 +126,9 @@ export default function AboutPage() {
             {/* Text Side */}
             <motion.div {...fadeUp(0)}>
               <p className="text-crazee-red font-bold uppercase tracking-widest text-sm mb-4">About Us</p>
-              <h2 className="text-4xl md:text-5xl font-display font-black text-stone-900 leading-tight mb-8">
-                We're Passionate About<br />
-                Fastfood in <span className="text-crazee-green">18 Years</span>
+              <h2 className="text-4xl md:text-5xl font-sans font-black text-stone-900 leading-tight mb-8">
+                Passionate About Great Food<br />
+                For Over <span className="text-crazee-green">18 Years</span>
               </h2>
               <div className="space-y-5 text-stone-600 text-lg leading-relaxed">
                 <p className="italic text-stone-800 font-semibold border-l-4 border-crazee-red pl-5">
@@ -128,7 +138,7 @@ export default function AboutPage() {
                   The quality of halal food, the delightful atmosphere and the excellent service that Crazee Mario's provides are unmatched in West Palm Beach, Florida! The food you find at Crazee Mario's Pizza and Indian Restaurant is exactly like the food cooked in the homes of Bangladesh, India, and Pakistan.
                 </p>
                 <p>
-                  Whether you're craving the aromatic layers of a slow-cooked Biryani, the rich warmth of a Curry, the cheesy crunch of a Masala Spicy Pizza, or the hearty satisfaction of an American Cheeseburger — we deliver bold taste every single time.
+                  Whether you're craving the aromatic layers of a slow-cooked Biryani, the rich warmth of a Curry, the cheesy crunch of a Masala Spicy Pizza, or the hearty satisfaction of an American Cheeseburger - we deliver bold taste every single time.
                 </p>
               </div>
               <div className="mt-10 flex flex-wrap gap-3">
@@ -144,7 +154,7 @@ export default function AboutPage() {
             <motion.div {...fadeUp(0.2)} className="relative">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src="/imagess/chef"
+                  src="/crazee-marios/imagess/chef"
                   alt="Chef at Crazee Mario's"
                   className="w-full h-[520px] object-cover"
                 />
@@ -180,33 +190,47 @@ export default function AboutPage() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════
-          About Crazee Mario — Red Banner
+          About Crazee Mario - Red Banner
       ═══════════════════════════════════════════════════════════════ */}
-      <section className="relative overflow-hidden">
-        <div className="bg-gradient-to-r from-crazee-red to-red-700 py-16">
-          <div
-            className="absolute inset-0 bg-cover bg-center opacity-15"
-            style={{ backgroundImage: `url('/imagess/WhatsApp Image 2026-05-24 at 12.15.53 PM.jpeg')` }}
-          />
-          <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <motion.h2
-              {...fadeUp(0)}
-              className="text-4xl md:text-5xl font-display font-black text-white mb-6"
-            >
-              About Crazee Mario
-            </motion.h2>
-            <motion.p
-              {...fadeUp(0.1)}
-              className="text-white/90 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto"
-            >
-              At Crazee Mario, we're all about bold flavors and fresh ingredients. With over 18 years of experience, we serve 100% Halal, hygienic meals with a unique Asian touch. Join us for an unforgettable dining experience that keeps you coming back for more!
-            </motion.p>
-          </div>
+      <section className="relative overflow-hidden py-24 bg-stone-50">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          
+          {/* Decorative Glows */}
+          <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-64 h-64 bg-crazee-red/20 blur-[80px] rounded-full pointer-events-none" />
+          <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-64 h-64 bg-crazee-yellow/20 blur-[80px] rounded-full pointer-events-none" />
+
+          <motion.div
+            {...fadeUp(0)}
+            className="relative bg-stone-900 rounded-[2.5rem] overflow-hidden shadow-2xl border border-stone-800"
+          >
+            {/* Background Image Blend */}
+            <div
+              className="absolute inset-0 bg-cover bg-center opacity-20 mix-blend-overlay"
+              style={{ backgroundImage: `url('/crazee-marios/imagess/WhatsApp Image 2026-05-24 at 12.15.53 PM.jpeg')` }}
+            />
+            
+            <div className="relative px-8 py-16 md:px-16 md:py-20 text-center flex flex-col items-center">
+              {/* Gold Quote Icon */}
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#D4A843]/20 to-[#D4A843]/5 border border-[#D4A843]/30 flex items-center justify-center mb-8 backdrop-blur-md">
+                <svg className="w-8 h-8 text-[#D4A843]" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                </svg>
+              </div>
+
+              <h2 className="text-4xl md:text-5xl font-display font-black text-white mb-6 tracking-tight">
+                About Crazee Mario
+              </h2>
+              
+              <p className="text-stone-300 text-lg md:text-xl leading-relaxed max-w-3xl font-light">
+                At Crazee Mario, we're all about bold flavors and fresh ingredients. With over <strong className="text-white font-bold">18 years of experience</strong>, we serve <strong className="text-crazee-yellow font-bold">100% Halal</strong>, hygienic meals with a unique Asian touch. Join us for an unforgettable dining experience that keeps you coming back for more!
+              </p>
+            </div>
+          </motion.div>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════
-          Our Story — Vertical Timeline
+          Our Story - Vertical Timeline
       ═══════════════════════════════════════════════════════════════ */}
       <section className="py-24 bg-stone-950 relative overflow-hidden">
         {/* Background texture */}
@@ -245,7 +269,7 @@ export default function AboutPage() {
                       isLeft ? 'md:flex-row' : 'md:flex-row-reverse'
                     }`}
                   >
-                    {/* Year Badge — sits on the line */}
+                    {/* Year Badge - sits on the line */}
                     <div className="absolute left-6 md:left-1/2 -translate-x-1/2 z-10">
                       <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${t.gradient} flex items-center justify-center font-display font-black text-white text-xs shadow-lg shadow-stone-900/50 ring-4 ring-stone-950`}>
                         {t.year}
@@ -272,7 +296,7 @@ export default function AboutPage() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════
-          Features Grid — Why Choose Us
+          Features Grid - Why Choose Us
       ═══════════════════════════════════════════════════════════════ */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-16 items-center">

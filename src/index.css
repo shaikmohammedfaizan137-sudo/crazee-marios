@@ -7,7 +7,7 @@
   --color-crazee-yellow: #FCEB11;
 
   --font-sans: 'Inter', system-ui, sans-serif;
-  --font-display: 'Outfit', 'Inter', system-ui, sans-serif;
+  --font-display: 'Inter', system-ui, sans-serif;
 }
 
 @layer base {

@@ -99,7 +99,7 @@ export default function CartSidebar({ isOpen, onClose }) {
                         {/* Image */}
                         <div className="w-16 h-16 rounded-xl overflow-hidden shrink-0 bg-stone-200">
                           {item.image ? (
-                            <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+                            <img src={encodeURI(item.image)} alt={item.name} className="w-full h-full object-cover" />
                           ) : (
                             <div className="w-full h-full flex items-center justify-center">
                               <ShoppingBag size={20} className="text-stone-400" />
@@ -109,7 +109,7 @@ export default function CartSidebar({ isOpen, onClose }) {
 
                         {/* Info */}
                         <div className="flex-1 min-w-0">
-                          <p className="font-display font-bold text-stone-900 text-sm leading-tight truncate">{item.name}</p>
+                          <p className="font-sans font-bold text-stone-900 text-sm leading-tight truncate">{item.name}</p>
 
                           {/* Add-ons / Spice / Notes */}
                           {item.addons && (

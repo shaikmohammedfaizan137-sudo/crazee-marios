@@ -51,7 +51,7 @@ export default function ContactPage() {
     <div className="bg-stone-50 min-h-screen">
 
       {/* Page Header */}
-      <section className="bg-stone-900 text-white py-20">
+      <section className="bg-stone-900 text-white pt-36 pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}
             className="text-crazee-yellow font-bold uppercase tracking-widest text-sm mb-4"

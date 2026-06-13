@@ -79,7 +79,7 @@ function MenuCard({ item, onSelect }) {
       <div className="w-[160px] shrink-0 relative overflow-hidden">
         {item.image ? (
           <img
-            src={item.image}
+            src={encodeURI(item.image)}
             alt={item.name}
             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
           />
@@ -133,7 +133,7 @@ export default function MenuPage() {
     <div className="bg-stone-50 min-h-screen">
 
       {/* Header */}
-      <section className="bg-stone-900 text-white py-16">
+      <section className="bg-stone-900 text-white pt-32 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-crazee-yellow font-bold uppercase tracking-widest text-sm mb-3">Explore</p>
           <h1 className="text-5xl md:text-6xl font-display font-black mb-6">Our Full Menu</h1>

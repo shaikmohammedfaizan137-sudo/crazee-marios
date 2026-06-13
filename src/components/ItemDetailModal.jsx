@@ -222,7 +222,7 @@ export default function ItemDetailModal({ item, isOpen, onClose }) {
               {item.image ? (
                 <div className="relative h-64 sm:h-72 overflow-hidden">
                   <img
-                    src={item.image}
+                    src={encodeURI(item.image)}
                     alt={item.name}
                     className="w-full h-full object-cover"
                   />
