@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, MapPin, Utensils, ShieldCheck, Star, ShoppingCart } from 'lucide-react';
+import { ArrowRight, MapPin, Utensils, ShieldCheck, Star, ShoppingCart, Pizza, Flame } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 
 const stats = [
@@ -11,10 +11,10 @@ const stats = [
 ];
 
 const floatingCards = [
-  { icon: Utensils, label: 'Biryani', sub: 'Aromatic & Rich', color: 'text-amber-500', delay: 0 },
-  { icon: Utensils, label: 'Masala Pizza', sub: 'Bold & Spicy', color: 'text-crazee-red', delay: 0.5 },
-  { icon: Utensils, label: 'Crispy Wings', sub: 'Perfectly Fried', color: 'text-rose-500', delay: 1 },
-  { icon: Utensils, label: 'Burgers', sub: 'Juicy & Fresh', color: 'text-yellow-500', delay: 1.5 },
+  { icon: Utensils, label: 'Biryani', sub: 'Aromatic & Rich', color: 'text-amber-500', bg: 'bg-amber-500/10', border: 'border-amber-500/20', delay: 0 },
+  { icon: Pizza, label: 'Masala Pizza', sub: 'Bold & Spicy', color: 'text-crazee-red', bg: 'bg-crazee-red/10', border: 'border-crazee-red/20', delay: 0.5 },
+  { icon: Flame, label: 'Crispy Wings', sub: 'Perfectly Fried', color: 'text-orange-500', bg: 'bg-orange-500/10', border: 'border-orange-500/20', delay: 1 },
+  { icon: Utensils, label: 'Burgers', sub: 'Juicy & Fresh', color: 'text-yellow-500', bg: 'bg-yellow-500/10', border: 'border-yellow-500/20', delay: 1.5 },
 ];
 
 export default function Hero() {
@@ -25,15 +25,19 @@ export default function Hero() {
       {/* Background */}
       <div className="absolute inset-0">
         <div
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-center opacity-40 blur-sm mix-blend-luminosity"
           style={{ backgroundImage: `url('${import.meta.env.BASE_URL}imagess/resturant')` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-stone-950 via-stone-950/85 to-stone-950/40" />
-        <div className="absolute inset-0 bg-gradient-to-t from-stone-950/60 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-stone-950 via-stone-950/90 to-stone-950/50" />
+        <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-transparent to-stone-950/40" />
+        
+        {/* Glowing Orbs */}
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-crazee-red/20 rounded-full blur-[120px] mix-blend-screen animate-pulse duration-10000" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-crazee-yellow/20 rounded-full blur-[120px] mix-blend-screen animate-pulse duration-10000" style={{ animationDelay: '2s' }} />
       </div>
 
       {/* Dot pattern */}
-      <div className="absolute inset-0 opacity-5"
+      <div className="absolute inset-0 opacity-[0.03]"
         style={{ backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`, backgroundSize: '40px 40px' }}
       />
 
@@ -55,12 +59,11 @@ export default function Hero() {
 
           <motion.h1
             initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-5xl sm:text-6xl lg:text-7xl font-sans font-black text-white leading-[1.05] mb-6"
+            className="text-5xl sm:text-6xl lg:text-7xl font-sans font-black text-white leading-[1.05] mb-6 drop-shadow-2xl"
           >
             Bold Flavors.<br />
-            <span className="text-crazee-yellow">Fresh Food.</span><br />
-            <span className="text-crazee-green">Crazee</span>{' '}
-            <span className="text-crazee-red">Taste.</span>
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 to-amber-500 drop-shadow-sm">Fresh Food.</span><br />
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-crazee-red to-orange-500 drop-shadow-sm">Crazee Taste.</span>
           </motion.h1>
 
           <motion.p
@@ -77,15 +80,16 @@ export default function Hero() {
           >
             <button
               onClick={() => setIsCartOpen(true)}
-              className="inline-flex items-center justify-center gap-2 bg-crazee-green hover:bg-green-600 text-white font-bold text-lg px-8 py-4 rounded-2xl transition-all transform hover:scale-[1.03] shadow-xl shadow-green-900/40"
+              className="group relative inline-flex items-center justify-center gap-2 bg-gradient-to-r from-crazee-green to-emerald-500 hover:from-emerald-500 hover:to-crazee-green text-white font-bold text-lg px-8 py-4 rounded-2xl transition-all transform hover:scale-[1.03] shadow-xl shadow-green-900/40 border border-green-400/30 overflow-hidden"
             >
-              <ShoppingCart size={20} /> Open Cart
+              <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
+              <ShoppingCart size={20} className="relative z-10" /> <span className="relative z-10">Open Cart</span>
             </button>
             <Link
               to="/menu"
-              className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur text-white font-bold text-lg px-8 py-4 rounded-2xl border border-white/25 transition-all"
+              className="group inline-flex items-center justify-center gap-2 bg-stone-900/60 hover:bg-stone-800/80 backdrop-blur-md text-white font-bold text-lg px-8 py-4 rounded-2xl border border-white/10 hover:border-white/25 transition-all shadow-xl shadow-black/20"
             >
-              View Full Menu <ArrowRight size={20} />
+              View Full Menu <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </Link>
           </motion.div>
 
@@ -114,17 +118,17 @@ export default function Hero() {
               <motion.div
                 animate={{ y: [0, i % 2 === 0 ? -12 : 12, 0] }}
                 transition={{ repeat: Infinity, duration: 4 + i, ease: 'easeInOut' }}
-                className={`flex items-center gap-4 bg-white/95 backdrop-blur rounded-2xl px-6 py-4 shadow-2xl ${i % 2 === 0 ? 'ml-0' : 'ml-16'}`}
+                className={`flex items-center gap-4 bg-stone-900/70 backdrop-blur-xl border border-white/10 rounded-2xl px-6 py-4 shadow-2xl shadow-black/50 ${i % 2 === 0 ? 'ml-0' : 'ml-16'}`}
               >
-                <div className={`w-12 h-12 rounded-xl bg-stone-100 flex items-center justify-center ${card.color}`}>
-                  <Utensils size={24} />
+                <div className={`w-12 h-12 rounded-xl flex items-center justify-center border ${card.bg} ${card.border} ${card.color}`}>
+                  <card.icon size={24} />
                 </div>
                 <div>
-                  <div className="font-sans font-bold text-stone-900 text-lg">{card.label}</div>
-                  <div className="text-stone-400 text-sm">{card.sub}</div>
+                  <div className="font-sans font-bold text-white text-lg drop-shadow-md">{card.label}</div>
+                  <div className="text-stone-300 text-sm">{card.sub}</div>
                   <div className="flex gap-0.5 mt-1">
                     {[...Array(5)].map((_, si) => (
-                      <Star key={si} size={10} className="text-crazee-yellow fill-crazee-yellow" />
+                      <Star key={si} size={10} className="text-crazee-yellow fill-crazee-yellow drop-shadow-sm" />
                     ))}
                   </div>
                 </div>
