@@ -53,9 +53,14 @@ export default function Hero() {
             <span className="inline-flex items-center gap-1.5 bg-crazee-red text-white text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full">
               <ShieldCheck size={13} /> 100% Halal
             </span>
-            <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur text-white text-xs font-semibold px-4 py-2 rounded-full border border-white/20">
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=7667-A+Lake+Worth+Road,+Lake+Worth,+FL+33467"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur text-white text-xs font-semibold px-4 py-2 rounded-full border border-white/20 hover:bg-white/20 hover:border-white/40 transition-all"
+            >
               <MapPin size={12} /> Lake Worth, FL
-            </span>
+            </a>
           </motion.div>
 
           <motion.h1

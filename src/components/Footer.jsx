@@ -149,7 +149,14 @@ export default function Footer() {
               <div className="w-9 h-9 rounded-2xl bg-stone-800 flex items-center justify-center shrink-0 mt-0.5">
                 <MapPin size={16} className="text-crazee-yellow" />
               </div>
-              <span className="leading-relaxed">7667-A Lake Worth Road<br />Lake Worth, FL 33467</span>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=7667-A+Lake+Worth+Road,+Lake+Worth,+FL+33467"
+                target="_blank"
+                rel="noreferrer"
+                className="leading-relaxed hover:text-white hover:underline underline-offset-2 transition-colors"
+              >
+                7667-A Lake Worth Road<br />Lake Worth, FL 33467
+              </a>
             </li>
             <li className="flex items-center gap-3">
               <div className="w-9 h-9 rounded-2xl bg-stone-800 flex items-center justify-center shrink-0">
@@ -175,7 +182,14 @@ export default function Footer() {
           <p>&copy; {year} Crazee Marios. All rights reserved.</p>
           <div className="flex items-center gap-2">
             <Flame size={12} className="text-crazee-red" />
-            <p>Made with passion in Lake Worth, FL</p>
+            <p>Made with passion in{' '}
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=7667-A+Lake+Worth+Road,+Lake+Worth,+FL+33467"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-white underline underline-offset-2 transition-colors"
+              >Lake Worth, FL</a>
+            </p>
           </div>
         </div>
       </div>
