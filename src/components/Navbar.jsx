@@ -26,7 +26,7 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 h-[75px] transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 h-[65px] transition-all duration-300 ${
           scrolled
             ? 'bg-white shadow-md shadow-stone-900/5'
             : 'bg-white/95 backdrop-blur-md border-b border-stone-200/40'
@@ -34,15 +34,15 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between gap-4">
           
-          {/* Logo Link with breakout effect */}
+          {/* Logo Link (centered and contained within the 65px header) */}
           <Link
             to="/"
             onClick={() => setIsOpen(false)}
-            className="relative flex items-center shrink-0 overflow-visible z-50"
+            className="relative flex items-center shrink-0 z-50"
             style={{ textDecoration: 'none' }}
           >
-            {/* Desktop Logo: Increased 300% size, breaks out of 75px header */}
-            <div className="hidden md:block relative h-[90px] w-[375px] top-[7.5px] overflow-hidden hover:scale-[1.02] active:scale-[0.99] transition-all duration-300 drop-shadow-md">
+            {/* Desktop Logo: 50px high visual, fits perfectly inside 65px header */}
+            <div className="hidden md:block relative h-[50px] w-[208px] overflow-hidden hover:scale-[1.02] active:scale-[0.99] transition-all duration-300 drop-shadow-sm">
               <img
                 src={`${import.meta.env.BASE_URL}imagess/transpirent_logo.png`}
                 alt="CrazeeMarios Logo"
@@ -56,8 +56,8 @@ export default function Navbar() {
                 }}
               />
             </div>
-            {/* Mobile Logo: responsive size */}
-            <div className="block md:hidden relative h-[55px] w-[230px] top-[0px] overflow-hidden hover:scale-[1.02] transition-all duration-300 drop-shadow-sm">
+            {/* Mobile Logo: 40px high visual */}
+            <div className="block md:hidden relative h-[40px] w-[166px] overflow-hidden hover:scale-[1.02] transition-all duration-300 drop-shadow-sm">
               <img
                 src={`${import.meta.env.BASE_URL}imagess/transpirent_logo.png`}
                 alt="CrazeeMarios Logo"
@@ -82,13 +82,13 @@ export default function Navbar() {
                   to={link.path}
                   end={link.path === '/'}
                   className={({ isActive }) =>
-                    `group relative py-2 px-3.5 text-[13px] font-black tracking-wider uppercase transition-colors duration-200 ${
+                    `group relative py-2 px-3 text-[13px] font-black tracking-wider uppercase transition-colors duration-200 ${
                       isActive ? 'text-crazee-red active-link' : 'text-stone-600 hover:text-stone-950'
                     }`
                   }
                 >
                   <span>{link.name}</span>
-                  <span className="absolute bottom-0 left-3.5 right-3.5 h-[3px] bg-crazee-red rounded-full transition-transform duration-300 origin-left scale-x-0 group-hover:scale-x-100 group-[.active-link]:scale-x-100" />
+                  <span className="absolute bottom-0 left-3 right-3 h-[3px] bg-crazee-red rounded-full transition-transform duration-300 origin-left scale-x-0 group-hover:scale-x-100 group-[.active-link]:scale-x-100" />
                 </NavLink>
               ))}
             </nav>
@@ -107,7 +107,7 @@ export default function Navbar() {
             {/* Phone Badge */}
             <a
               href="tel:+15612943062"
-              className="flex items-center gap-2 bg-stone-50 hover:bg-stone-100 text-stone-850 px-3.5 py-2 rounded-full border border-stone-200/80 font-bold text-xs transition-all duration-200 shadow-sm shrink-0"
+              className="flex items-center gap-2 bg-stone-50 hover:bg-stone-100 text-stone-850 px-3 py-1.5 rounded-full border border-stone-200/80 font-bold text-xs transition-all duration-200 shadow-sm shrink-0"
             >
               <Phone size={12} className="text-crazee-green animate-pulse" />
               <span>561-294-3062</span>
@@ -117,7 +117,7 @@ export default function Navbar() {
             <button
               id="cart-toggle-btn"
               onClick={() => setIsCartOpen(true)}
-              className="relative flex items-center gap-2 bg-white hover:bg-stone-50 text-stone-850 px-4.5 py-2.5 rounded-full font-black text-xs border border-stone-300/80 transition-all hover:scale-[1.03] active:scale-[0.98] shadow-sm hover:shadow-md cursor-pointer shrink-0"
+              className="relative flex items-center gap-2 bg-white hover:bg-stone-50 text-stone-850 px-4 py-2 rounded-full font-black text-xs border border-stone-300/80 transition-all hover:scale-[1.03] active:scale-[0.98] shadow-sm hover:shadow-md cursor-pointer shrink-0"
             >
               <ShoppingCart size={13} className="text-stone-500" />
               <span>Cart</span>
@@ -136,7 +136,7 @@ export default function Navbar() {
             {/* Order Now Button - Redesigned as Primary Button */}
             <button
               onClick={() => setIsCartOpen(true)}
-              className="bg-gradient-to-r from-crazee-red to-orange-600 hover:from-orange-600 hover:to-crazee-red text-white px-5 py-2.5 rounded-full font-black text-xs transition-all transform hover:scale-[1.03] active:scale-[0.98] shadow-md hover:shadow-lg shadow-crazee-red/15 border border-red-500/10 cursor-pointer shrink-0"
+              className="bg-gradient-to-r from-crazee-red to-orange-600 hover:from-orange-600 hover:to-crazee-red text-white px-4.5 py-2 rounded-full font-black text-xs transition-all transform hover:scale-[1.03] active:scale-[0.98] shadow-md hover:shadow-lg shadow-crazee-red/15 border border-red-500/10 cursor-pointer shrink-0"
             >
               Order Now
             </button>
