@@ -61,6 +61,7 @@ export default function CartSidebar({ isOpen, onClose }) {
               </div>
               <button
                 onClick={onClose}
+                aria-label="Close cart"
                 className="text-stone-400 hover:text-white transition-colors p-1 rounded-lg hover:bg-white/10"
               >
                 <X size={22} />
@@ -99,7 +100,7 @@ export default function CartSidebar({ isOpen, onClose }) {
                         {/* Image */}
                         <div className="w-16 h-16 rounded-xl overflow-hidden shrink-0 bg-stone-200">
                           {item.image ? (
-                            <img src={encodeURI(item.image)} alt={item.name} className="w-full h-full object-cover" />
+                            <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
                           ) : (
                             <div className="w-full h-full flex items-center justify-center">
                               <ShoppingBag size={20} className="text-stone-400" />
@@ -128,6 +129,7 @@ export default function CartSidebar({ isOpen, onClose }) {
                             <div className="flex items-center gap-1">
                               <button
                                 onClick={() => decrement(item.id)}
+                                aria-label={`Decrease quantity of ${item.name}`}
                                 className="w-7 h-7 rounded-lg bg-stone-200 hover:bg-crazee-red hover:text-white text-stone-700 flex items-center justify-center transition-colors"
                               >
                                 <Minus size={12} />
@@ -135,6 +137,7 @@ export default function CartSidebar({ isOpen, onClose }) {
                               <span className="w-6 text-center font-bold text-stone-900 text-sm">{item.qty}</span>
                               <button
                                 onClick={() => increment(item.id)}
+                                aria-label={`Increase quantity of ${item.name}`}
                                 className="w-7 h-7 rounded-lg bg-stone-200 hover:bg-crazee-green hover:text-white text-stone-700 flex items-center justify-center transition-colors"
                               >
                                 <Plus size={12} />

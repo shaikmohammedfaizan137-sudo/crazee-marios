@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { MapPin, Phone, Globe, Share2, MessageCircle, Link2, ShoppingCart, ArrowRight, Flame } from 'lucide-react';
 import { useCart } from '../context/CartContext';
-import { motion } from 'framer-motion';
 
 export default function Footer() {
   const { setIsCartOpen } = useCart();
@@ -74,13 +73,16 @@ export default function Footer() {
           {/* Social links */}
           <div className="flex gap-3">
             {[
-              { Icon: Share2, href: '#' },
-              { Icon: MessageCircle, href: '#' },
-              { Icon: Link2, href: '#' },
-            ].map(({ Icon, href }, i) => (
+              { Icon: Share2, href: 'https://www.facebook.com/crazeemarios', label: 'Facebook' },
+              { Icon: MessageCircle, href: 'https://wa.me/15612943062', label: 'WhatsApp' },
+              { Icon: Link2, href: 'https://www.instagram.com/crazeemarios', label: 'Instagram' },
+            ].map(({ Icon, href, label }, i) => (
               <a
                 key={i}
                 href={href}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={label}
                 className="group w-10 h-10 rounded-2xl bg-stone-800 hover:bg-crazee-red flex items-center justify-center transition-all hover:scale-110 hover:-translate-y-1"
               >
                 <Icon size={16} className="text-stone-400 group-hover:text-white transition-colors" />
@@ -159,7 +161,7 @@ export default function Footer() {
               <div className="w-9 h-9 rounded-2xl bg-stone-800 flex items-center justify-center shrink-0">
                 <Globe size={16} className="text-crazee-yellow" />
               </div>
-              <a href="http://www.crazeemario.com" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">
+              <a href="https://www.crazeemario.com" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">
                 www.crazeemario.com
               </a>
             </li>
@@ -175,6 +177,29 @@ export default function Footer() {
             <Flame size={12} className="text-crazee-red" />
             <p>Made with passion in Lake Worth, FL</p>
           </div>
+        </div>
+      </div>
+
+      {/* Built by strip */}
+      <div className="border-t border-stone-800/40 bg-stone-950/80">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-center">
+          <a
+            href="https://creativals.com"
+            target="_blank"
+            rel="noreferrer"
+            className="group inline-flex items-center gap-2.5 text-stone-600 hover:text-white transition-colors duration-300"
+          >
+            <span className="text-[10px] uppercase tracking-[0.2em] font-semibold">Designed &amp; Built by</span>
+            <span
+              className="inline-flex items-center gap-1 bg-gradient-to-r from-amber-400/10 to-orange-500/10 border border-amber-500/20 group-hover:border-amber-400/50 group-hover:from-amber-400/20 group-hover:to-orange-500/20 text-amber-400 group-hover:text-amber-300 text-[11px] font-bold tracking-wide px-3 py-1 rounded-full transition-all duration-300"
+              style={{ boxShadow: '0 0 12px rgba(251,191,36,0)' }}
+              onMouseEnter={e => e.currentTarget.style.boxShadow = '0 0 18px rgba(251,191,36,0.2)'}
+              onMouseLeave={e => e.currentTarget.style.boxShadow = '0 0 12px rgba(251,191,36,0)'}
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+              creativals.com
+            </span>
+          </a>
         </div>
       </div>
     </footer>

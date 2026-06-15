@@ -79,7 +79,7 @@ function MenuCard({ item, onSelect }) {
       <div className="w-[160px] shrink-0 relative overflow-hidden">
         {item.image ? (
           <img
-            src={encodeURI(item.image)}
+            src={item.image}
             alt={item.name}
             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
           />
@@ -111,7 +111,7 @@ export default function MenuPage() {
   const filtered = menuData.items.filter((item) => {
     const matchCat = activeCategory === 'all' || item.category === activeCategory;
     const q = searchQuery.toLowerCase();
-    const matchSearch = !q || item.name.toLowerCase().includes(q) || item.description.toLowerCase().includes(q);
+    const matchSearch = !q || item.name.toLowerCase().includes(q) || (item.description || '').toLowerCase().includes(q);
     return matchCat && matchSearch;
   });
 
@@ -133,19 +133,34 @@ export default function MenuPage() {
     <div className="bg-stone-50 min-h-screen">
 
       {/* Header */}
-      <section className="bg-stone-900 text-white pt-32 pb-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-crazee-yellow font-bold uppercase tracking-widest text-sm mb-3">Explore</p>
-          <h1 className="text-5xl md:text-6xl font-display font-black mb-6">Our Full Menu</h1>
+      <section className="relative text-white pt-36 pb-20 overflow-hidden">
+        {/* Food background image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url('${import.meta.env.BASE_URL}imagess/menu_hero_bg.png')` }}
+        />
+        {/* Dark overlay — keeps text perfectly readable */}
+        <div className="absolute inset-0 bg-gradient-to-b from-stone-950/80 via-stone-950/75 to-stone-950/95" />
+        {/* Warm amber glow from centre */}
+        <div className="absolute inset-0 pointer-events-none"
+          style={{ background: 'radial-gradient(ellipse 60% 50% at 50% 40%, rgba(251,191,36,0.08) 0%, transparent 70%)' }} />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="inline-flex items-center gap-2 text-amber-400 font-bold uppercase tracking-[0.25em] text-xs mb-5 bg-amber-400/10 border border-amber-400/20 px-4 py-2 rounded-full">
+            <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+            Explore
+          </p>
+          <h1 className="text-5xl md:text-7xl font-display font-black mb-3 drop-shadow-2xl">Our Full Menu</h1>
+          <p className="text-stone-400 text-base mb-8">Biryani · Wings · Pizza · Burgers · Curry · Kabob & More</p>
           <div className="max-w-xl mx-auto relative">
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search biryani, wings, pizza..."
-              className="w-full bg-white/10 backdrop-blur border border-white/20 rounded-2xl py-4 pl-12 pr-12 text-white placeholder-stone-400 focus:outline-none focus:border-crazee-green transition-colors"
+              className="w-full bg-white/8 backdrop-blur-md border border-white/15 hover:border-amber-400/40 focus:border-amber-400/60 rounded-2xl py-4 pl-12 pr-12 text-white placeholder-stone-500 focus:outline-none transition-colors shadow-2xl"
             />
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-stone-400" size={20} />
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-stone-500" size={20} />
             {searchQuery && (
               <button onClick={() => setSearchQuery('')} className="absolute right-4 top-1/2 -translate-y-1/2 text-stone-400 hover:text-white">
                 <X size={18} />
@@ -153,6 +168,9 @@ export default function MenuPage() {
             )}
           </div>
         </div>
+
+        {/* Bottom fade into page bg */}
+        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-stone-50 to-transparent" />
       </section>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">

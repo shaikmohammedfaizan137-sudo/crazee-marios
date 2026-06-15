@@ -10,10 +10,10 @@ function cartReducer(state, action) {
       const existing = state.find((i) => i.id === action.item.id);
       if (existing) {
         return state.map((i) =>
-          i.id === action.item.id ? { ...i, qty: i.qty + 1 } : i
+          i.id === action.item.id ? { ...i, qty: i.qty + (action.item.qty ?? 1) } : i
         );
       }
-      return [...state, { ...action.item, qty: 1 }];
+      return [...state, { ...action.item, qty: action.item.qty ?? 1 }];
     }
     case 'REMOVE':
       return state.filter((i) => i.id !== action.id);

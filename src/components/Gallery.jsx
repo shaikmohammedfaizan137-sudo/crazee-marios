@@ -75,6 +75,7 @@ export default function Gallery() {
               <img
                 src={img.src}
                 alt={img.label}
+                loading="lazy"
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
               />
               {/* Base overlay */}
@@ -91,7 +92,7 @@ export default function Gallery() {
               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <button
                   onClick={(e) => { e.stopPropagation(); setIsCartOpen(true); }}
-                  className="bg-white text-stone-900 font-bold text-sm px-5 py-2.5 rounded-full shadow-2xl hover:bg-crazee-yellow transition-colors translate-y-2 group-hover:translate-y-0 transition-transform duration-300 flex items-center gap-2"
+                  className="bg-white text-stone-900 font-bold text-sm px-5 py-2.5 rounded-full shadow-2xl hover:bg-crazee-yellow flex items-center gap-2 translate-y-2 group-hover:translate-y-0 transition-all duration-300"
                 >
                   <ShoppingCart size={14} />
                   Order

@@ -51,6 +51,11 @@ const commitments = [
 function CommitmentSection() {
   return (
     <section className="py-28 bg-stone-950 relative overflow-hidden">
+      {/* Food background image at low opacity */}
+      <div
+        className="absolute inset-0 bg-cover bg-center opacity-[0.12]"
+        style={{ backgroundImage: `url('${import.meta.env.BASE_URL}imagess/food_background.png')` }}
+      />
       {/* Grid bg */}
       <div
         className="absolute inset-0 opacity-[0.04]"

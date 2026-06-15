@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, MapPin, Utensils, ShieldCheck, Star, ShoppingCart, Pizza, Flame } from 'lucide-react';
+import { ArrowRight, MapPin, Utensils, ShieldCheck, Star, ShoppingCart, Pizza, Flame, Award } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 
 const stats = [
   { value: '50+', label: 'Menu Items', icon: Utensils },
   { value: '100%', label: 'Halal', icon: ShieldCheck },
   { value: '4.8', label: 'Rating', icon: Star },
-  { value: '10+', label: 'Years', icon: Star },
+  { value: '10+', label: 'Years', icon: Award },
 ];
 
 const floatingCards = [
@@ -25,11 +25,12 @@ export default function Hero() {
       {/* Background */}
       <div className="absolute inset-0">
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-40 blur-sm mix-blend-luminosity"
+          className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url('${import.meta.env.BASE_URL}imagess/resturant')` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-stone-950 via-stone-950/90 to-stone-950/50" />
-        <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-transparent to-stone-950/40" />
+        {/* Dark overlay — left side heavy for text readability, right side light so image shows */}
+        <div className="absolute inset-0 bg-gradient-to-r from-stone-950/95 via-stone-950/70 to-stone-950/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-stone-950/50 via-transparent to-transparent" />
         
         {/* Glowing Orbs */}
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-crazee-red/20 rounded-full blur-[120px] mix-blend-screen animate-pulse duration-10000" />
@@ -138,8 +139,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-stone-50 to-transparent" />
+
     </section>
   );
 }

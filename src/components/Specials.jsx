@@ -87,11 +87,15 @@ function SpecialCard({ item, index, onSelect }) {
         </p>
 
         {/* CTA Button */}
-        <div className="relative overflow-hidden flex items-center justify-center gap-2 w-full font-bold py-3.5 rounded-2xl bg-stone-950 group-hover:bg-crazee-red text-white transition-all duration-400 shadow-md group-hover:shadow-xl group-hover:shadow-red-900/30">
+        <button
+          type="button"
+          aria-label={`Customize and add ${item.name} to cart`}
+          className="relative overflow-hidden flex items-center justify-center gap-2 w-full font-bold py-3.5 rounded-2xl bg-stone-950 group-hover:bg-crazee-red text-white transition-all duration-400 shadow-md group-hover:shadow-xl group-hover:shadow-red-900/30"
+        >
           <div className="absolute inset-0 shimmer opacity-0 group-hover:opacity-100" />
           <Plus size={18} className="relative z-10" />
           <span className="relative z-10">Customize & Add</span>
-        </div>
+        </button>
       </div>
     </motion.div>
   );

@@ -7,7 +7,7 @@
   --color-crazee-yellow: #FCEB11;
 
   --font-sans: 'Inter', system-ui, sans-serif;
-  --font-display: 'Inter', system-ui, sans-serif;
+  --font-display: 'Outfit', system-ui, sans-serif;
 }
 
 @layer base {
@@ -47,4 +47,41 @@
   .focus\:ring-crazee-green:focus { --tw-ring-color: #008A3F; }
   .focus\:ring-crazee-red:focus { --tw-ring-color: #E31B23; }
   .shadow-green-900\/50 { box-shadow: 0 10px 15px -3px rgba(0,62,28,0.5); }
+
+  /* Background */
+  .bg-crazee-cream { background-color: #fdf8f0; }
+
+  /* Gradient text utilities — used across Gallery, Specials, TrustAndOrder, AboutPage */
+  .gradient-text-fire {
+    background: linear-gradient(135deg, #f97316, #ef4444);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .gradient-text-fresh {
+    background: linear-gradient(135deg, #22c55e, #008A3F);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Shimmer animation — used in Specials card CTA button */
+  .shimmer {
+    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.15) 50%, transparent 100%);
+    background-size: 200% 100%;
+    animation: shimmer 1.8s infinite;
+  }
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  /* Hide scrollbar — used in MenuPage category tabs */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }

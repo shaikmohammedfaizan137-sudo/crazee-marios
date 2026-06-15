@@ -114,6 +114,7 @@ export default function Navbar() {
           <div className="flex md:hidden items-center gap-2">
             <button
               onClick={() => setIsCartOpen(true)}
+              aria-label="Open cart"
               className="relative p-2 rounded-xl text-stone-700 hover:bg-stone-100 transition-colors"
             >
               <ShoppingCart size={22} />

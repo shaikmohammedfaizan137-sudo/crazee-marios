@@ -174,9 +174,8 @@ export default function ItemDetailModal({ item, isOpen, onClose }) {
       specialInstructions: specialInstructions.trim() || null,
     };
 
-    for (let i = 0; i < quantity; i++) {
-      addToCart(cartItem);
-    }
+    // Add item directly with the selected quantity
+    addToCart({ ...cartItem, qty: quantity });
 
     setJustAdded(true);
     setTimeout(() => {
@@ -222,7 +221,7 @@ export default function ItemDetailModal({ item, isOpen, onClose }) {
               {item.image ? (
                 <div className="relative h-64 sm:h-72 overflow-hidden">
                   <img
-                    src={encodeURI(item.image)}
+                    src={item.image}
                     alt={item.name}
                     className="w-full h-full object-cover"
                   />

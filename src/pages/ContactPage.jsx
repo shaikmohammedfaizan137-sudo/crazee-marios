@@ -36,6 +36,7 @@ export default function ContactPage() {
   const { setIsCartOpen } = useCart();
   const [form, setForm] = useState({ name: '', phone: '', date: '', time: '', guests: '2', message: '' });
   const [submitted, setSubmitted] = useState(false);
+  const todayDate = new Date().toISOString().split('T')[0]; // YYYY-MM-DD for min date
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
@@ -137,6 +138,7 @@ export default function ContactPage() {
                 <div>
                   <label className="block text-sm font-semibold text-stone-300 mb-2">Date *</label>
                   <input type="date" name="date" required value={form.date} onChange={handleChange}
+                    min={todayDate}
                     className="w-full bg-stone-800 border border-stone-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-crazee-green transition-colors"
                   />
                 </div>
