@@ -36,20 +36,11 @@ export default function Navbar() {
           
           {/* Logo */}
           <Link to="/" onClick={() => setIsOpen(false)} className="flex items-center shrink-0">
-            <div style={{ width: '180px', height: '60px', overflow: 'hidden', position: 'relative' }}>
-              <img
-                src={`${import.meta.env.BASE_URL}imagess/transpirent_logo.png`}
-                alt="CrazeeMarios Logo"
-                style={{
-                  position: 'absolute',
-                  width: '390px',
-                  height: 'auto',
-                  top: '50%',
-                  left: '50%',
-                  transform: 'translate(-50%, -50%)'
-                }}
-              />
-            </div>
+            <img
+              src={`${import.meta.env.BASE_URL}imagess/transpirent_logo.png`}
+              alt="CrazeeMarios Logo"
+              style={{ height: '52px', width: 'auto', objectFit: 'contain' }}
+            />
           </Link>
 
           {/* Desktop Nav */}

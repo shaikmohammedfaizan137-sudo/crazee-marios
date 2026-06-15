@@ -10,13 +10,15 @@ export default function Footer() {
     <footer className="bg-stone-950 text-stone-400">
 
       {/* Top CTA Banner */}
-      <div className="relative overflow-hidden bg-stone-900 py-16">
-        {/* Food Background image */}
-        <div className="absolute inset-0 opacity-50"
-          style={{ backgroundImage: `url('${import.meta.env.BASE_URL}imagess/footer_cta_bg.png')`, backgroundSize: 'cover', backgroundPosition: 'center' }}
-        />
-        {/* Red overlay gradient */}
-        <div className="absolute inset-0 bg-gradient-to-r from-crazee-red/95 via-red-600/90 to-rose-600/80" />
+      <div className="relative overflow-hidden py-16"
+        style={{
+          backgroundImage: `url('${import.meta.env.BASE_URL}imagess/footer_cta_bg.png')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        {/* Red tint overlay — transparent enough to show food */}
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(200,20,20,0.80), rgba(180,10,10,0.72))' }} />
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
