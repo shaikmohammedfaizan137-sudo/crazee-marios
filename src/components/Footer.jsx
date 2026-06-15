@@ -12,7 +12,7 @@ export default function Footer() {
       {/* Top CTA Banner */}
       <div className="relative overflow-hidden bg-stone-900 py-16">
         {/* Food Background image */}
-        <div className="absolute inset-0 opacity-40 mix-blend-overlay"
+        <div className="absolute inset-0 opacity-50"
           style={{ backgroundImage: `url('${import.meta.env.BASE_URL}imagess/footer_cta_bg.png')`, backgroundSize: 'cover', backgroundPosition: 'center' }}
         />
         {/* Red overlay gradient */}
@@ -54,7 +54,7 @@ export default function Footer() {
           <div className="mb-6">
             <div style={{ width: '220px', height: '74px', overflow: 'hidden', position: 'relative' }}>
               <img
-                src={`${import.meta.env.BASE_URL}imagess/transpirent logo`}
+                src={`${import.meta.env.BASE_URL}imagess/transpirent_logo.png`}
                 alt="CrazeeMarios Logo"
                 style={{
                   position: 'absolute',
