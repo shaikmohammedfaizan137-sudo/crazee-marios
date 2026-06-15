@@ -52,13 +52,13 @@ export default function Footer() {
         {/* Brand Column */}
         <div className="lg:col-span-1">
           <div className="mb-6">
-            <div style={{ width: '160px', height: '54px', overflow: 'hidden', position: 'relative' }}>
+            <div style={{ width: '220px', height: '74px', overflow: 'hidden', position: 'relative' }}>
               <img
                 src={`${import.meta.env.BASE_URL}imagess/transpirent logo`}
                 alt="CrazeeMarios Logo"
                 style={{
                   position: 'absolute',
-                  width: '340px',
+                  width: '460px',
                   height: 'auto',
                   top: '50%',
                   left: '50%',

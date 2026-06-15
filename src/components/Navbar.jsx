@@ -36,13 +36,13 @@ export default function Navbar() {
           
           {/* Logo */}
           <Link to="/" onClick={() => setIsOpen(false)} className="flex items-center shrink-0">
-            <div style={{ width: '120px', height: '40px', overflow: 'hidden', position: 'relative' }}>
+            <div style={{ width: '180px', height: '60px', overflow: 'hidden', position: 'relative' }}>
               <img
                 src={`${import.meta.env.BASE_URL}imagess/transpirent logo`}
                 alt="CrazeeMarios Logo"
                 style={{
                   position: 'absolute',
-                  width: '260px',
+                  width: '390px',
                   height: 'auto',
                   top: '50%',
                   left: '50%',
