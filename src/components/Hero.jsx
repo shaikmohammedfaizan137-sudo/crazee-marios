@@ -90,6 +90,11 @@ export default function Hero() {
               <MapPin size={10} className="text-crazee-green animate-bounce" />
               <span>Lake Worth, FL</span>
             </a>
+            <span className="text-white/10 w-[1px] h-3.5 self-center" />
+            <span className="inline-flex items-center gap-1 text-crazee-green text-[10px] font-black uppercase tracking-widest">
+              <ShieldCheck size={11} className="text-crazee-green" />
+              <span>100% Halal</span>
+            </span>
           </motion.div>
 
           <motion.h1
