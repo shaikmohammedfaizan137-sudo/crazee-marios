@@ -26,7 +26,7 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 h-[75px] transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 h-[70px] transition-all duration-300 ${
           scrolled
             ? 'bg-white shadow-md shadow-stone-900/5'
             : 'bg-white/95 backdrop-blur-md border-b border-stone-200/40'
@@ -40,60 +40,41 @@ export default function Navbar() {
             onClick={() => setIsOpen(false)}
             className="relative flex items-center shrink-0 z-50"
           >
-            {/* Desktop Logo: 58px high, fits perfectly inside 75px header */}
+            {/* Desktop Logo: 44px high, minimal */}
             <img
               src={`${import.meta.env.BASE_URL}imagess/transpirent_logo.png`}
               alt="CrazeeMarios Logo"
-              className="hidden md:block h-[58px] w-auto transition-transform duration-300 hover:scale-[1.02] active:scale-[0.99] drop-shadow-sm"
+              className="hidden md:block h-[44px] w-auto transition-transform duration-300 hover:scale-[1.02] active:scale-[0.99] drop-shadow-sm"
             />
-            {/* Mobile Logo: 46px high */}
+            {/* Mobile Logo: 38px high */}
             <img
               src={`${import.meta.env.BASE_URL}imagess/transpirent_logo.png`}
               alt="CrazeeMarios Logo"
-              className="block md:hidden h-[46px] w-auto transition-transform duration-300 hover:scale-[1.02] drop-shadow-sm"
+              className="block md:hidden h-[38px] w-auto transition-transform duration-300 hover:scale-[1.02] drop-shadow-sm"
             />
           </Link>
 
-          {/* Desktop Nav Links & Trust Badge */}
-          <div className="hidden md:flex items-center gap-6">
-            <nav className="flex items-center gap-1">
-              {navLinks.map((link) => (
-                <NavLink
-                  key={link.name}
-                  to={link.path}
-                  end={link.path === '/'}
-                  className={({ isActive }) =>
-                    `group relative py-2 px-3 text-[13px] font-black tracking-wider uppercase transition-colors duration-200 ${
-                      isActive ? 'text-crazee-red active-link' : 'text-stone-600 hover:text-stone-950'
-                    }`
-                  }
-                >
-                  <span>{link.name}</span>
-                  <span className="absolute bottom-0 left-3 right-3 h-[3px] bg-crazee-red rounded-full transition-transform duration-300 origin-left scale-x-0 group-hover:scale-x-100 group-[.active-link]:scale-x-100" />
-                </NavLink>
-              ))}
-            </nav>
-
-            {/* Trust Badge */}
-            <div className="hidden lg:flex items-center gap-1.5 bg-stone-50 border border-stone-200/80 px-3.5 py-1.5 rounded-full text-[11px] font-black text-stone-700 shadow-sm whitespace-nowrap">
-              <span className="text-amber-500">⭐</span>
-              <span>4.8 Rating</span>
-              <span className="text-stone-300">|</span>
-              <span className="text-crazee-green uppercase tracking-wide">100% Halal</span>
-            </div>
-          </div>
+          {/* Desktop Nav Links (Centered) */}
+          <nav className="hidden md:flex items-center justify-center gap-1 flex-1">
+            {navLinks.map((link) => (
+              <NavLink
+                key={link.name}
+                to={link.path}
+                end={link.path === '/'}
+                className={({ isActive }) =>
+                  `group relative py-2 px-3 text-[13px] font-black tracking-wider uppercase transition-colors duration-200 ${
+                    isActive ? 'text-crazee-red active-link' : 'text-stone-600 hover:text-stone-950'
+                  }`
+                }
+              >
+                <span>{link.name}</span>
+                <span className="absolute bottom-0 left-3 right-3 h-[3px] bg-crazee-red rounded-full transition-transform duration-300 origin-left scale-x-0 group-hover:scale-x-100 group-[.active-link]:scale-x-100" />
+              </NavLink>
+            ))}
+          </nav>
 
           {/* Desktop CTAs */}
-          <div className="hidden md:flex items-center gap-3">
-            {/* Phone Badge */}
-            <a
-              href="tel:+15612943062"
-              className="flex items-center gap-2 bg-stone-50 hover:bg-stone-100 text-stone-850 px-3 py-1.5 rounded-full border border-stone-200/80 font-bold text-xs transition-all duration-200 shadow-sm shrink-0"
-            >
-              <Phone size={12} className="text-crazee-green animate-pulse" />
-              <span>561-294-3062</span>
-            </a>
-
+          <div className="hidden md:flex items-center gap-3 shrink-0">
             {/* Cart Button - Redesigned as Secondary Button */}
             <button
               id="cart-toggle-btn"
