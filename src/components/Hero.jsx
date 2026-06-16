@@ -51,12 +51,12 @@ export default function Hero() {
       {/* Background image overlay */}
       <div className="absolute inset-0 bg-stone-950">
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-30"
+          className="absolute inset-0 bg-cover bg-center opacity-70"
           style={{ backgroundImage: `url('${import.meta.env.BASE_URL}imagess/resturant')` }}
         />
-        {/* Dark overlay: left heavy for text readability, right side lighter to reveal image details */}
-        <div className="absolute inset-0 bg-gradient-to-r from-stone-950 via-stone-950/85 to-stone-950/35" />
-        <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-transparent to-transparent" />
+        {/* Left-heavy gradient overlay to preserve text readability, leaving the right side clear */}
+        <div className="absolute inset-0 bg-gradient-to-r from-stone-950/95 via-stone-950/70 to-stone-950/15" />
+        <div className="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-transparent to-transparent" />
         
         {/* Glowing ambient light orbs */}
         <div className="absolute top-1/4 left-1/4 w-[450px] h-[450px] bg-crazee-red/12 rounded-full blur-[150px] mix-blend-screen animate-pulse duration-[8000ms]" />
