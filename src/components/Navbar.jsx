@@ -26,7 +26,7 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 h-[65px] transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 h-[75px] transition-all duration-300 ${
           scrolled
             ? 'bg-white shadow-md shadow-stone-900/5'
             : 'bg-white/95 backdrop-blur-md border-b border-stone-200/40'
@@ -34,43 +34,24 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between gap-4">
           
-          {/* Logo Link (centered and contained within the 65px header) */}
+          {/* Logo Link */}
           <Link
             to="/"
             onClick={() => setIsOpen(false)}
             className="relative flex items-center shrink-0 z-50"
-            style={{ textDecoration: 'none' }}
           >
-            {/* Desktop Logo: 50px high visual, fits perfectly inside 65px header */}
-            <div className="hidden md:block relative h-[50px] w-[208px] overflow-hidden hover:scale-[1.02] active:scale-[0.99] transition-all duration-300 drop-shadow-sm">
-              <img
-                src={`${import.meta.env.BASE_URL}imagess/transpirent_logo.png`}
-                alt="CrazeeMarios Logo"
-                style={{
-                  position: 'absolute',
-                  width: '125%',
-                  height: '522.5%',
-                  top: '-208.5%',
-                  left: '-14.5%',
-                  maxWidth: 'none',
-                }}
-              />
-            </div>
-            {/* Mobile Logo: 40px high visual */}
-            <div className="block md:hidden relative h-[40px] w-[166px] overflow-hidden hover:scale-[1.02] transition-all duration-300 drop-shadow-sm">
-              <img
-                src={`${import.meta.env.BASE_URL}imagess/transpirent_logo.png`}
-                alt="CrazeeMarios Logo"
-                style={{
-                  position: 'absolute',
-                  width: '125%',
-                  height: '522.5%',
-                  top: '-208.5%',
-                  left: '-14.5%',
-                  maxWidth: 'none',
-                }}
-              />
-            </div>
+            {/* Desktop Logo: 58px high, fits perfectly inside 75px header */}
+            <img
+              src={`${import.meta.env.BASE_URL}imagess/transpirent_logo.png`}
+              alt="CrazeeMarios Logo"
+              className="hidden md:block h-[58px] w-auto transition-transform duration-300 hover:scale-[1.02] active:scale-[0.99] drop-shadow-sm"
+            />
+            {/* Mobile Logo: 46px high */}
+            <img
+              src={`${import.meta.env.BASE_URL}imagess/transpirent_logo.png`}
+              alt="CrazeeMarios Logo"
+              className="block md:hidden h-[46px] w-auto transition-transform duration-300 hover:scale-[1.02] drop-shadow-sm"
+            />
           </Link>
 
           {/* Desktop Nav Links & Trust Badge */}

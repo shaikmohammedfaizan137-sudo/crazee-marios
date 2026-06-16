@@ -111,7 +111,16 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
             className="text-xl md:text-2xl text-stone-300 leading-relaxed max-w-2xl mx-auto drop-shadow-md"
           >
-            Bringing the boldest flavors and freshest ingredients to Lake Worth, Florida.
+            Bringing the boldest flavors and freshest ingredients to{' '}
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=7667-A+Lake+Worth+Road,+Lake+Worth,+FL+33467"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-amber-450 text-amber-400 underline underline-offset-2 transition-colors"
+            >
+              Lake Worth, Florida
+            </a>
+            .
           </motion.p>
         </div>
       </section>

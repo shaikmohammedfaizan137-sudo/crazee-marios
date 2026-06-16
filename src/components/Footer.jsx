@@ -54,24 +54,28 @@ export default function Footer() {
         {/* Brand Column */}
         <div className="lg:col-span-1">
           <div className="mb-6">
-            <div style={{ width: '220px', height: '74px', overflow: 'hidden', position: 'relative' }}>
+            <div className="flex items-center" style={{ width: '220px', height: '65px' }}>
               <img
                 src={`${import.meta.env.BASE_URL}imagess/transpirent_logo.png`}
                 alt="CrazeeMarios Logo"
+                className="h-full w-auto object-contain"
                 style={{
-                  position: 'absolute',
-                  width: '460px',
-                  height: 'auto',
-                  top: '50%',
-                  left: '50%',
-                  transform: 'translate(-50%, -50%)',
                   filter: 'brightness(0) invert(1)',
                 }}
               />
             </div>
           </div>
           <p className="text-stone-400 leading-relaxed mb-6 text-sm">
-            Bold flavors, fresh halal food, and an unforgettable dining experience in Lake Worth, FL.
+            Bold flavors, fresh halal food, and an unforgettable dining experience in{' '}
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=7667-A+Lake+Worth+Road,+Lake+Worth,+FL+33467"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-white underline underline-offset-2 transition-colors"
+            >
+              Lake Worth, FL
+            </a>
+            .
           </p>
           {/* Social links */}
           <div className="flex gap-3">

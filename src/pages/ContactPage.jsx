@@ -8,6 +8,7 @@ const contactCards = [
     icon: MapPin,
     title: 'Visit Us',
     content: '7667-A Lake Worth Road\nLake Worth, FL 33467',
+    contentLink: 'https://www.google.com/maps/search/?api=1&query=7667-A+Lake+Worth+Road,+Lake+Worth,+FL+33467',
     action: { label: 'Get Directions', href: 'https://www.google.com/maps/search/?api=1&query=7667-A+Lake+Worth+Road,+Lake+Worth,+FL+33467', icon: ExternalLink },
     color: 'text-crazee-red',
     bg: 'bg-red-50',
@@ -16,6 +17,7 @@ const contactCards = [
     icon: Phone,
     title: 'Call / WhatsApp',
     content: '+1 (561) 294-3062',
+    contentLink: 'tel:+15612943062',
     action: { label: 'Call Now', href: 'tel:+15612943062', icon: Phone },
     color: 'text-crazee-green',
     bg: 'bg-green-50',
@@ -86,7 +88,18 @@ export default function ContactPage() {
                 <card.icon size={22} />
               </div>
               <h3 className="font-display font-bold text-stone-900 mb-2">{card.title}</h3>
-              <p className="text-stone-500 text-sm mb-4 whitespace-pre-line">{card.content}</p>
+              {card.contentLink ? (
+                <a
+                  href={card.contentLink}
+                  target={card.contentLink.startsWith('http') ? '_blank' : undefined}
+                  rel={card.contentLink.startsWith('http') ? 'noreferrer' : undefined}
+                  className="block text-stone-500 text-sm mb-4 whitespace-pre-line hover:text-stone-850 hover:underline"
+                >
+                  {card.content}
+                </a>
+              ) : (
+                <p className="text-stone-500 text-sm mb-4 whitespace-pre-line">{card.content}</p>
+              )}
               {card.action && (
                 <a href={card.action.href} target="_blank" rel="noreferrer"
                   className={`inline-flex items-center gap-1.5 ${card.color} font-semibold text-sm hover:underline`}
