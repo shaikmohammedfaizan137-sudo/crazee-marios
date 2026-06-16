@@ -49,13 +49,13 @@ export default function Hero() {
     <section className="relative min-h-[95vh] pt-[110px] pb-16 flex items-center overflow-hidden bg-stone-950">
 
       {/* Background image overlay */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 bg-stone-950">
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-[0.08] blur-[6px] scale-105"
+          className="absolute inset-0 bg-cover bg-center opacity-30"
           style={{ backgroundImage: `url('${import.meta.env.BASE_URL}imagess/resturant')` }}
         />
         {/* Dark overlay: left heavy for text readability, right side lighter to reveal image details */}
-        <div className="absolute inset-0 bg-gradient-to-r from-stone-950 via-stone-950/95 to-stone-950/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-stone-950 via-stone-950/85 to-stone-950/35" />
         <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-transparent to-transparent" />
         
         {/* Glowing ambient light orbs */}
